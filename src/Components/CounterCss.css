@@ -1,0 +1,15 @@
+.counter{
+    /* width: 100px; */
+    text-align: center;
+    font-size: 24px;
+}
+
+.buttonStyle{
+    font-size: 16px;
+    background-color: #00a5ab;
+    width: 100px;
+    margin: 10px;
+    color: white;
+    padding: 15px;
+    border-radius: 30px;
+}
