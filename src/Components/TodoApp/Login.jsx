@@ -1,20 +1,6 @@
 import { useState } from "react";
-import "./TodoApp.css";
-import { BrowserRouter,Routes,Route } from "react-router-dom";
-export default function TodoApp() {
-    return (
-        <div className="TodoApp">
-            <BrowserRouter>
-            <Routes>
-                <Route path="/" element={ <LoginComponent />}/>
-                <Route path="/login" element={ <LoginComponent />}/>
-
-            </Routes>
-            </BrowserRouter>
-            {/* <LoginComponent /> */}
-        </div>
-    );
-}
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "./security/AuthProvider";
 
 function LoginComponent() {
 
@@ -24,11 +10,16 @@ function LoginComponent() {
     const [success, setSuccess] = useState(Boolean);
     const [failed, setFailed] = useState(Boolean);
 
+    const navigation = useNavigate();
+    const context = useAuth();
+
     const handleSubmit = () => {
         // console.log('Username :', username, 'Password :', password);
         if (username === "Saran" && password === "1234") {
             setSuccess(true);
             setFailed(false);
+            context.setAuthentication(true)
+            navigation(`/welcome/${username}`);
         }
         else {
             setSuccess(false);
@@ -59,3 +50,5 @@ function LoginComponent() {
         </div>
     );
 }
+
+export default LoginComponent;
