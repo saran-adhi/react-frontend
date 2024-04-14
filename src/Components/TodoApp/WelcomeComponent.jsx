@@ -3,7 +3,6 @@ import { useAuth } from "./security/AuthProvider";
 
 function WelcomeComponent() {
     const { username } = useParams();
-    const context = useAuth();
 
     // console.log(JSON.stringify(context,null,2))
     return (

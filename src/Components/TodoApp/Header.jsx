@@ -18,7 +18,7 @@ export default function HeaderComponent() {
                                         <li className="nav-item"><Link className="nav-link" to="/welcome/saran">Home</Link></li>
                                     )
                                 }
-  {
+                                {
                                     context.isAutheticated &&
                                     (
                                         <li className="nav-item"><Link className="nav-link" to="/todo">Todo</Link></li>
@@ -28,8 +28,15 @@ export default function HeaderComponent() {
                             </ul>
                         </div>
                         <ul className="navbar-nav">
-                            <li className="nav-item"><Link className="nav-link" to="/login">Login</Link></li>
-                            <li className="nav-item"><Link className="nav-link" to="/logout">Logout</Link></li>
+
+                            {
+                                context.isAutheticated ?
+                                    (
+                                        <li className="nav-item"><Link className="nav-link" to="/logout">Logout</Link></li>
+                                    )
+                                    :
+                                    <li className="nav-item"><Link className="nav-link" to="/login">Login</Link></li>
+                            }
                         </ul>
                     </nav>
                 </div>
