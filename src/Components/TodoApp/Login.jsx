@@ -15,7 +15,7 @@ function LoginComponent() {
 
     const handleSubmit = () => {
         // console.log('Username :', username, 'Password :', password);
-        if (username === "Saran" && password === "1234") {
+        if (username === "saran" && password === "1234") {
             setSuccess(true);
             setFailed(false);
             context.setAuthentication(true)

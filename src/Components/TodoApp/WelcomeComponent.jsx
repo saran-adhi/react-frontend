@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import { apiService1, apiService2 } from "../../ApiService";
+import { apiService1, apiService2 } from "../../ApiService1";
 
 function WelcomeComponent() {
     const { username } = useParams();
